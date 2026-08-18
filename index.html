@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Shukla — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800;900&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --glass: rgba(255,255,255,0.02);
+    --border: rgba(255,255,255,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* FULL SCREEN 3D BACKGROUND */
+  .hero-scene {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    border: none;
+  }
+
+  /* VIGNETTE OVERLAY for that "photo of screen" vibe */
+  .vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+  }
+
+  /* CONTENT OVERLAY */
+  .content {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 8vw;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a5b4fc;
+    background: rgba(165,180,252,0.06);
+    border: 1px solid rgba(165,180,252,0.2);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 9vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: #fff;
+    text-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  }
+
+  h1 .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 30%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sub {
+    margin-top: 22px;
+    font-size: 1.15rem;
+    color: #9ca3af;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+
+  /* CTA / BUTTONS */
+  .actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(59,130,246,0.35);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(59,130,246,0.5); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: background .2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+
+  /* SOCIAL / BOTTOM STRIP */
+  .strip {
+    position: relative;
+    z-index: 10;
+    padding: 40px 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(to top, #020202, transparent);
+  }
+  .info h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+  .info p { color: #9ca3af; font-size: 0.9rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .content { padding: 60px 6vw; }
+    h1 { font-size: 3.5rem; }
+    .strip { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. FULL SCREEN 3D (Your exact scene) -->
+<iframe class="hero-scene" src="https://my.spline.design/3dportfoliowebsitescrolltoexplore-pvG7mNSUqYkq98YIQOdR1SI8/" allowfullscreen></iframe>
+
+<!-- 2. DARK VIGNETTE for that "photo of screen / reel" aesthetic -->
+<div class="vignette"></div>
+
+<!-- 3. MAIN CONTENT OVERLAY -->
+<main class="content">
+  <div class="tag">Web Developer • Video Editor • AI Automations</div>
+  
+  <h1>
+    Shivam <span class="gradient-text">Shukla</span>
+  </h1>
+  
+  <p class="sub">
+    Building interactive 3D web experiences, cinematic edits, and smart AI workflows. 
+    This is the future of portfolios — <strong>scroll, drag, and explore.</strong>
+  </p>
+  
+  <div class="actions">
+    <a href="mailto:shivamshukla200724@gmail.com" class="btn-primary">Say Hello →</a>
+    <a href="https://my.spline.design/3dportfoliowebsitescrolltoexplore-pvG7mNSUqYkq98YIQOdR1SI8/" target="_blank" class="btn-secondary">Launch 3D Room</a>
+  </div>
+</main>
+
+<!-- 4. BOTTOM STRIP (Look + Contact) -->
+<footer class="strip">
+  <div class="info">
+    <h3>Shivam Shukla</h3>
+    <p>Web Developer • Video Editor • AI Automation</p>
+  </div>
+  <div style="color:#6b7280; font-size:0.85rem;">
+    ✉️ shivamshukla200724@gmail.com
+  </div>
+</footer>
+
+</body>
+</html>
